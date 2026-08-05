@@ -3,19 +3,6 @@ data "oci_identity_availability_domains" "ads" {
   compartment_id = var.compartment_id
 }
 
-# User data script for Nginx
-locals {
-  user_data_script = base64encode(<<-EOF
-              #!/bin/bash
-              apt-get update
-              apt-get install -y nginx
-              systemctl start nginx
-              systemctl enable nginx
-              echo "<h1>Welcome to OCI Linux Instance - Deployed by Terraform</h1>" > /var/www/html/index.html
-              EOF
-  )
-}
-
 # Linux Compute Instance
 resource "oci_core_instance" "linux_instance" {
   compartment_id      = var.compartment_id
@@ -43,9 +30,8 @@ resource "oci_core_instance" "linux_instance" {
     skip_source_dest_check    = false
   }
 
-  # SSH key and user data
+  # SSH key
   metadata = {
     ssh_authorized_keys = var.ssh_public_key
-    user_data           = local.user_data_script
   }
 }
