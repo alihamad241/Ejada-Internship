@@ -4,7 +4,7 @@ This Terraform project provisions a simple Oracle Cloud Infrastructure (OCI) env
 
 ## Architecture
 
-![OCI Lab 1 Architecture Diagram](architecture-diagram.png)
+![OCI Lab 1 Architecture Diagram](images/architecture-diagram.png)
 
 ## What this deployment creates
 
@@ -86,3 +86,38 @@ After deployment, the following outputs are available:
 - vcn_id: The ID of the created VCN
 - instance_id: The OCID of the compute instance
 - instance_public_ip: The public IP address assigned to the instance
+
+## Manual Deployment Walkthrough
+
+This section shows the deployment process with screenshots captured from the OCI console, demonstrating the resources created and how to access them.
+
+### Virtual Cloud Network (VCN) Setup
+
+The VCN is created with proper routing and internet access configured:
+
+![VCN Configuration](images/Screenshot_20260805_103645.png)
+
+![VCN Details](images/Screenshot_20260805_150215.png)
+
+![Gateways](images/Screenshot_20260805_150235.png)
+
+![Root Table](images/Screenshot_20260805_150333.png)
+
+![Security Lists](images/Screenshot_20260805_150407.png)
+
+### Compute Instance Deployment
+
+![Compute Instance Deployment](images/Screenshot_20260805_150441.png)
+![Compute Instance Details](images/Screenshot_20260805_150458.png)
+![VNIC](images/Screenshot_20260805_150520.png)
+
+### Block Volume creation and Attachment
+![Block Volume Creation](images/Screenshot_20260805_152835.png)
+### SSH Connection and Block Volume Mounting
+
+After deployment, you can SSH into the instance and mount the block volume:
+
+![SSH Connection Output](images/Screenshot_20260805_151244.png)
+
+![Block Volume Mount Output](images/Screenshot_20260805_153257.png)
+
