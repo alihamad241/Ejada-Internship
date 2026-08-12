@@ -70,6 +70,18 @@ resource "oci_core_security_list" "private_security_list" {
     }
   }
 
+  # Allow ICMP (ping) from bastion for debugging connectivity
+  ingress_security_rules {
+    protocol    = "1"
+    source      = var.public_subnet_cidr_block
+    description = "Allow ICMP (ping) from public subnet for debugging"
+
+    icmp_options {
+      type = 8
+      code = -1
+    }
+  }
+
   egress_security_rules {
     protocol    = "all"
     destination = "0.0.0.0/0"
