@@ -1,0 +1,30 @@
+module "lab2" {
+  source = "./modules/lab2"
+
+  compartment_id            = var.compartment_id
+  tenancy_ocid              = var.tenancy_ocid
+  region                    = var.region
+  environment               = var.environment
+  vcn_name                  = var.vcn_name
+  vcn_dns_label             = var.vcn_dns_label
+  vcn_cidr_block            = var.vcn_cidr_block
+  public_subnet_name        = var.public_subnet_name
+  private_subnet_name       = var.private_subnet_name
+  public_subnet_dns_label   = var.public_subnet_dns_label
+  private_subnet_dns_label  = var.private_subnet_dns_label
+  public_subnet_cidr_block  = var.public_subnet_cidr_block
+  private_subnet_cidr_block = var.private_subnet_cidr_block
+  instance_name             = var.instance_name
+  instance_hostname_label   = var.instance_hostname_label
+  instance_shape            = var.instance_shape
+  instance_ocpus            = var.instance_ocpus
+  instance_memory           = var.instance_memory
+  ssh_public_key            = var.ssh_public_key
+  load_balancer_shape       = var.load_balancer_shape
+  bastion_shape             = var.bastion_shape
+  bastion_ocpus             = var.bastion_ocpus
+  bastion_memory            = var.bastion_memory
+  bastion_name              = var.bastion_name
+  bastion_hostname_label    = var.bastion_hostname_label
+  bastion_ssh_source_cidr   = var.bastion_ssh_source_cidr
+}
