@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejada Cloud Build Track 2026 - Containerized Application</title>
+    <style>
+        :root {
+            --primary: #0076D6;
+            --secondary: #161513;
+            --accent: #31006F;
+            --bg: #F4F7FA;
+            --card-bg: #FFFFFF;
+            --text: #2C3E50;
+            --success: #2ECC71;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 40px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .card ul {
+            list-style-type: none;
+        }
+
+        .card li {
+            padding: 8px 0;
+            border-bottom: 1px solid #EEF2F5;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card li:last-child {
+            border-bottom: none;
+        }
+
+        .status-ok {
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7F8C8D;
+            font-size: 0.9rem;
+        }
+
+        code {
+            background: #EAECEE;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Ejada | Summer Internship Program 2026</h1>
+            <p>Cloud Build Track - OCI Services, Terraform Automation & OKE</p>
+            <div class="badge">● Application Status: Healthy & Operational</div>
+        </header>
+
+        <div class="grid">
+            <div class="card">
+                <h3>📦 Container Specification</h3>
+                <ul>
+                    <li><span>Base Image:</span> <code>nginx:alpine</code></li>
+                    <li><span>Container Web Server:</span> NGINX 1.25+</li>
+                    <li><span>Exposed Port:</span> <code>80 (HTTP)</code></li>
+                    <li><span>OCI Registry:</span> <code>OCIR (Oracle Cloud)</code></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>☁️ OCI Deployment Info</h3>
+                <ul>
+                    <li><span>Target Infrastructure:</span> Oracle Kubernetes Engine</li>
+                    <li><span>Networking:</span> VCN-Native Pod IP Networking</li>
+                    <li><span>Storage Driver:</span> OCI CSI Block Volume (50Gi)</li>
+                    <li><span>Ingress Controller:</span> OCI Public Load Balancer</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>✅ Deliverables Checklist</h3>
+                <ul>
+                    <li><span>App Assessment:</span> <span class="status-ok">Completed</span></li>
+                    <li><span>OCI Architecture:</span> <span class="status-ok">Completed</span></li>
+                    <li><span>Terraform Infra:</span> <span class="status-ok">Deployed</span></li>
+                    <li><span>Docker & OCIR:</span> <span class="status-ok">Built & Pushed</span></li>
+                    <li><span>OKE Deployment:</span> <span class="status-ok">Running</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Ejada Summer Internship Program - Prepared for OCI & Terraform Cloud Build Track</p>
+        </footer>
+    </div>
+</body>
+</html>

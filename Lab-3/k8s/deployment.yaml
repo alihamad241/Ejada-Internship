@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app-deployment
+  namespace: default
+  labels:
+    app: web-app
+spec:
+  # Set replicas to 1 for ReadWriteOnce (RWO) OCI CSI Block Volume attachment
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-app
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      # Init container copies application assets into the mounted block volume
+      initContainers:
+      - name: init-html-content
+        image: alihamad2411/ejada-cloud-app:v1.0.0
+        command: ["/bin/sh", "-c"]
+        args:
+        - |
+          echo "Populating persistent block volume with application assets..."
+          cp -f /usr/share/nginx/html/index.html /mnt/pvc/index.html || true
+        volumeMounts:
+        - mountPath: /mnt/pvc
+          name: app-data
+      containers:
+      - name: ejada-app
+        image: alihamad2411/ejada-cloud-app:v1.0.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "250m"
+        volumeMounts:
+        - mountPath: /usr/share/nginx/html
+          name: app-data
+      volumes:
+      - name: app-data
+        persistentVolumeClaim:
+          claimName: oci-block-volume-pvc

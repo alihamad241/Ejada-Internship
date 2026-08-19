@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-app-lb-service
+  namespace: default
+  annotations:
+    service.beta.kubernetes.io/oci-load-balancer-shape: "100Mbps"
+spec:
+  type: LoadBalancer
+  selector:
+    app: web-app
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 80
+  - name: https
+    protocol: TCP
+    port: 443
+    targetPort: 80
