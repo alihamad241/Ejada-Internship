@@ -2,16 +2,7 @@
 
 ---
 
-## 1. Merged Files Description
-
-This document consolidates information from the following three files:
-- **`README.md`**: Provides the step-by-step execution guide, high-level architecture overview, deliverables checklist, and verification outputs.
-- **`APP_DEPENDENCY_ASSESSMENT.md`**: Outlines the source application’s dependencies, runtime requirements, network security configurations, and the target OCI architecture.
-- **`FILE_STRUCTURE_GUIDE.md`**: Details the purpose and structure of the Terraform modules (`subnet`, `oke`), Kubernetes manifests, and root configuration files.
-
----
-
-## 2. Target OCI Architecture
+## 1. Target OCI Architecture
 
 The target architecture is a production-grade, highly available Oracle Kubernetes Engine (OKE) setup designed using reusable Terraform modules.
 
@@ -59,7 +50,7 @@ The target architecture is a production-grade, highly available Oracle Kubernete
 
 ---
 
-## 3. Application Dependencies Assessment
+## 2. Application Dependencies Assessment
 
 ### Runtime & Dependency Matrix
 | Layer | Component | Requirement / Specification | Purpose |
@@ -71,7 +62,7 @@ The target architecture is a production-grade, highly available Oracle Kubernete
 
 ---
 
-## 4. Terraform Modules Documentation
+## 3. Terraform Modules Documentation
 
 ### A. Subnet Module (`modules/subnet`)
 * **What the module does**: It is a reusable, dynamic module designed to encapsulate a VCN Subnet, Route Table, Security List, and optional VCN Flow Logs. It eliminates duplicate networking code.
@@ -97,7 +88,7 @@ The target architecture is a production-grade, highly available Oracle Kubernete
 
 ---
 
-## 5. Problems Faced & Troubleshooting
+## 4. Problems Faced & Troubleshooting
 
 During the deployment lifecycle, several technical hurdles were encountered and resolved:
 
@@ -121,7 +112,7 @@ During the deployment lifecycle, several technical hurdles were encountered and 
 
 ---
 
-## 6. Complete Commands List (Execution Guide)
+## 5. Complete Commands List (Execution Guide)
 
 Here is every command used to initialize, deploy, debug, and verify the infrastructure and application from A to Z.
 
